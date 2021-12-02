@@ -6,19 +6,16 @@ from dotenv import load_dotenv
 load_dotenv()
 sessionID = os.getenv('session')
 
-if len(sys.argv) != 4:
-    print("[FILE_NAME] [URL] [DAY]")
+if len(sys.argv) != 2:
+    print("[DAY]")
 
-file_name = sys.argv[1].replace(" ", "")
-url = sys.argv[2]
-day = sys.argv[3]
+day = sys.argv[2]
 
 mkdir = "mkdir Day" + str(day)
 
 os.system(mkdir)
 
-touch = "touch Day" + str(day) + "/" + file_name + ".py"
-os.system(touch)
+curl = "curl \"https://adventofcode.com/2021/day/"+str(day)+"/input\" -H \"Cookie: " \
+       "session=" + sessionID + ">\" > Day" + str(day) + "/input.txt"
 
-curl = "curl \"https://adventofcode.com/2021/day/1/input\" -H \"Cookie: " \
-       "session=" + sessionID + ">\" "
+os.system(curl)
