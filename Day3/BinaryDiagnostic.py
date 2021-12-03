@@ -40,13 +40,13 @@ def main():
     gamma_rate = ""
     epsilon_rate = ""
 
-    size_bit = len(binaries[0].rstrip("\n"))
-
-    occurrence_0 = [0 for x0 in range(size_bit)]
-    occurrence_1 = [0 for x1 in range(size_bit)]
-
     for i in range(len(binaries)):
         binaries[i] = (binaries[i].rstrip("\n"))
+
+    size_bit = len(binaries[0])
+
+    occurrence_0 = [0 for x in range(size_bit)]
+    occurrence_1 = [0 for x in range(size_bit)]
 
     for i in range(len(binaries)):
         binary = binaries[i]
