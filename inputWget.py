@@ -9,7 +9,7 @@ sessionID = os.getenv('session')
 if len(sys.argv) != 2:
     print("[DAY]")
 
-day = sys.argv[2]
+day = sys.argv[1]
 
 mkdir = "mkdir Day" + str(day)
 
